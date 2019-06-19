@@ -1,12 +1,11 @@
-# http://www.pythonchallenge.com/pc/def/ocr.html
+# http://www.pythonchallenge.com/pc/def/equality.html
 
-with open('level_3/mess') as f:
-    mess = f.read()
+import re
 
-characters = []
+pattern = re.compile(r'[^A-Z][A-Z]{3}([a-z])[A-Z]{3}[^A-Z]')
 
-for c in mess:
-    if c.isalnum():
-        characters.append(c)
+with open('level_4/mess') as f:
+    mess = f.read().replace('\n', '')
 
-print(''.join(characters))
+result = pattern.findall(mess)
+print(''.join(result))

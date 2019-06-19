@@ -1,11 +1,23 @@
-# http://www.pythonchallenge.com/pc/def/equality.html
+# http://www.pythonchallenge.com/pc/def/linkedlist.php
 
-import re
+from os import system
+import urllib.request as req
 
-pattern = re.compile(r'[^A-Z][A-Z]{3}([a-z])[A-Z]{3}[^A-Z]')
+nothing = '11877' # The last nothing is '66831'
+template = 'http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing={}'
 
-with open('level_4/mess') as f:
-    mess = f.read().replace('\n', '')
+def extract(text):
+    result = []
+    for c in text:
+        if c.isdigit():
+            result.append(c)
+    return ''.join(result)
 
-result = pattern.findall(mess)
-print(''.join(result))
+while nothing:
+    with req.urlopen(template.format(nothing)) as page:
+       text = page.read().decode()
+       print(text)
+    if 'and the next nothing is ' in text and text.index('and') == 0:
+        nothing = extract(text)
+    else:
+        nothing = input('Enter your judgement: ')
