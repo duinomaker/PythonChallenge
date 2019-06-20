@@ -5,8 +5,8 @@ from PIL import Image
 def straighten(seq, x):
     return seq[x:] + seq[:x]
 
-raw = Image.open('level_16/mozart.gif')
-seq = [[raw.getpixel((j, i)) for j in range(640)] for i in range(480)]
+with Image.open('level_16/mozart.gif') as raw:
+    seq = [[raw.getpixel((j, i)) for j in range(640)] for i in range(480)]
 
 for i in range(480):
     for j in range(635):
@@ -14,11 +14,20 @@ for i in range(480):
             seq[i] = straighten(seq[i], j - 1)
             break
 
-img = Image.new('L', (640, 480))
+with Image.new('P', (640, 480)) as img:
+    for i in range(480):
+        for j in range(640):
+            img.putpixel((j, i), seq[i][j])
+    img.save('level_16/greyscale.gif')
 
-for i in range(480):
-    for j in range(640):
-        img.putpixel((j, i), seq[i][j])
+with open('level_16/mozart.gif', 'rb') as f:
+    header = f.read()[:781]
 
-img.save('level_16/result.bmp')
-img.show()
+with open('level_16/greyscale.gif', 'rb') as f:
+    body = f.read()[781:]
+
+with open('level_16/result.gif', 'wb') as f:
+    f.write(header + body)
+
+with Image.open('level_16/result.gif') as img:
+    img.show()
