@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<methodCall>
+<methodName>phone</methodName>
+    <params>
+        <value><string>evil</string></value>
+    </params>
+</methodCall>
