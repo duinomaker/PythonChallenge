@@ -2,9 +2,9 @@
 
 import re
 
-pattern = re.compile(r'[^A-Z][A-Z]{3}([a-z])[A-Z]{3}[^A-Z]')
+pattern = re.compile(r'(?:^|[^A-Z])[A-Z]{3}([a-z])[A-Z]{3}(?:[^A-Z]|$)')
 
-with open('level_4/mess') as f:
+with open('level_3/mess') as f:
     mess = f.read().replace('\n', '')
 
 result = pattern.findall(mess)

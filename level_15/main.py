@@ -1,3 +1,5 @@
+# http://www.pythonchallenge.com/pc/return/uzi.html (huge:file)
+
 import datetime
 
 eligible = []
