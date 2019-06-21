@@ -11,7 +11,7 @@ def extract(text):
             result.append(c)
     return ''.join(result)
 
-os.chdir('level_6/channel')
+os.chdir('level_06/channel')
 nothing = '90052'
 
 zfile = zipfile.ZipFile('../channel.zip')

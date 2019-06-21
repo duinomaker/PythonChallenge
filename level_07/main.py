@@ -1,7 +1,7 @@
 # http://www.pythonchallenge.com/pc/def/oxygen.html
 
 import PIL.Image as Image
-img = Image.open('level_7/oxygen.png')
+img = Image.open('level_07/oxygen.png')
 
 pixels = []
 

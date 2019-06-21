@@ -41,8 +41,8 @@ second = [156,141,165,135,169,131,176,130,187,134,191,140,191,146,186,150,179,15
 first = [tuple(first[i:i+2]) for i in range(0, len(first), 2)]
 second = [tuple(second[i:i+2]) for i in range(0, len(second), 2)]
 
-with open('level_9/first', 'wb') as f:
+with open('level_09/first', 'wb') as f:
     pickle.dump(first, f)
 
-with open('level_9/second', 'wb') as f:
+with open('level_09/second', 'wb') as f:
     pickle.dump(second, f)

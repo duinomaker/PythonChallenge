@@ -2,7 +2,7 @@
 
 import pickle
 
-with open('level_5/banner.p', 'rb') as f:
+with open('level_05/banner.p', 'rb') as f:
     data = pickle.load(f)
 
 for line in data:

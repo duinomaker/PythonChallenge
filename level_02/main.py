@@ -1,6 +1,6 @@
 # http://www.pythonchallenge.com/pc/def/ocr.html
 
-with open('level_3/mess') as f:
+with open('level_02/mess') as f:
     mess = f.read()
 
 characters = []
