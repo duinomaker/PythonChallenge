@@ -1,4 +1,4 @@
-# http://www.pythonchallenge.com/pc/def/linkedlist.php
+# http://www.pythonchallenge.com/pc/return/romance.html (huge:file)
 
 from urllib import request as req, parse
 from http import cookiejar

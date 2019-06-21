@@ -9,3 +9,6 @@ with open('level_13/request.xml') as f:
 
 with xmlrpc.client.ServerProxy(uri) as proxy:
     print(proxy.phone('Bert'))
+
+# Bert    -> 555-ITALY
+# Leopold -> 555-VIOLIN
